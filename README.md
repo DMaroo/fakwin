@@ -1,6 +1,6 @@
 # FakWin
 
-Fake KWin DBus service so that KDE 6 boot works when not using KWin. It exposes the `closeWaylandWindows` method through the `org.kde.KWin` service and `/Session` object.
+Fake KWin DBus service so that KDE 6 shutdown/reboot/logout works when not using KWin. It exposes the `closeWaylandWindows` method through the `org.kde.KWin` service and `/Session` object.
 
  - KDE 6 commit responsible for the change: https://github.com/KDE/plasma-workspace/commit/23cca93b879d0fcf9f430b03a482dbca1e0a1d79
  - KWin DBus config: https://github.com/KDE/kwin/blob/master/src/org.kde.KWin.Session.xml
@@ -36,6 +36,10 @@ method void org.freedesktop.DBus.Peer.Ping()
 ```
 
 It is important that the `bool org.kde.KWin.Session.closeWaylandWindows()` shows up in the output.
+
+## Make it persist
+
+You can add a user systemd service for this so that you don't need to run this manually everytime you want to shutdown. Here's an [article](https://www.linode.com/docs/guides/start-service-at-boot/) teaching how to do it.
 
 # Why
 
