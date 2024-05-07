@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 3.28)
 project(fakwin)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS on)
-set(CMAKE_SOURCE_DIR src)
-set(CMAKE_INCLUDE_DIR include)
-
-set(DBUS_XML_DIR dbus)
 
 find_package(Qt6 CONFIG REQUIRED Core DBus)
 
+set(SOURCE_DIR src)
+set(INCLUDE_DIR include)
+
+set(DBUS_XML_DIR dbus)
 set(DBUS_SPEC_XML org.kde.KWin.xml)
 
 set(DBUS_XML_SRCS)
@@ -20,18 +20,18 @@ qt_add_dbus_adaptor(DBUS_XML_SRCS
   FakWin
 )
 
-qt_wrap_cpp(SERVER_MOC ${CMAKE_INCLUDE_DIR}/FakWin.hpp)
+qt_wrap_cpp(SERVER_MOC ${INCLUDE_DIR}/FakWin.hpp)
 
 add_executable(fakwin
   ${SERVER_MOC}
-  ${CMAKE_SOURCE_DIR}/Server.cpp
-  ${CMAKE_SOURCE_DIR}/FakWin.cpp
+  ${SOURCE_DIR}/Server.cpp
+  ${SOURCE_DIR}/FakWin.cpp
   ${DBUS_XML_SRCS}
 )
 
 target_include_directories(fakwin
   PRIVATE
-  ${CMAKE_INCLUDE_DIR}
+  ${INCLUDE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}
 )
 
