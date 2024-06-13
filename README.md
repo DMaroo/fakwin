@@ -1,5 +1,9 @@
 # FakWin
 
+
+> [!IMPORTANT]
+> KDE bug tracker link: https://bugs.kde.org/show_bug.cgi?id=488277
+
 Fake KWin DBus service so that KDE 6 shutdown/reboot/logout works when not using KWin. It exposes the `closeWaylandWindows` method through the `org.kde.KWin` service and `/Session` object.
 
  - KDE 6 commit responsible for the change: https://github.com/KDE/plasma-workspace/commit/23cca93b879d0fcf9f430b03a482dbca1e0a1d79
@@ -44,3 +48,4 @@ You can add a user systemd service for this so that you don't need to run this m
 # Why
 
 https://github.com/heckelson/i3-and-kde-plasma/issues/54 motivated me to build this.
+
