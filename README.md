@@ -14,6 +14,8 @@ Fake KWin DBus service so that KDE 6 shutdown/reboot/logout works when not using
 
 ## Building
 
+You may need Qt6 development packages to build this (`qt6-base-dev` for Ubuntu, `qt6-qtbase-devel` for Fedora, `qt6-base` for Arch Linux).
+
 ```
 git clone https://github.com/DMaroo/fakwin.git
 cd fakwin
@@ -48,4 +50,3 @@ You can add a user systemd service for this so that you don't need to run this m
 # Why
 
 https://github.com/heckelson/i3-and-kde-plasma/issues/54 motivated me to build this.
-
