@@ -12,6 +12,8 @@ Fake KWin DBus service so that KDE 6 shutdown/reboot/logout works when not using
 
 # Usage
 
+For building and installing, you can check out the [`flake.nix`](./flake.nix) or [`install.sh`](./install.sh). I have listed the steps below if you plan on building and installing it manually.
+
 ## Building
 
 You may need Qt6 development packages to build this (`qt6-base-dev` for Ubuntu, `qt6-qtbase-devel` for Fedora, `qt6-base` for Arch Linux).
