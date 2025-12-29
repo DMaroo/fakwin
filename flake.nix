@@ -104,7 +104,7 @@
           with lib;
           let
             cfg = config.services.fakwin;
-            package = self.packages.${pkgs.system}.default;
+            package = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
           in
           {
             options.services.fakwin = {
@@ -152,7 +152,7 @@
           with lib;
           let
             cfg = config.services.fakwin;
-            package = self.packages.${pkgs.system}.default;
+            package = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
           in
           {
             options.services.fakwin = {
